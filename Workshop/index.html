@@ -17,7 +17,7 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#courses">Courses</a>
         <a href="#library">Study library</a>
-        <a href="#media">Listen &amp; watch</a>
+        <a href="#media">Study background</a>
         <a class="nav-cta" href="#about">About</a>
       </nav>
     </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="course-grid">
           <article class="course-card">
-            <img src="https://images.unsplash.com/photo-1516321310764-8d8f6f5f1f0a?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Student working on a laptop at a desk">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Student working on a laptop at a desk">
             <div class="course-card-body">
               <span class="tag tag-blue">DIGITAL SKILLS</span>
               <h3>Web Design Basics</h3>
@@ -102,19 +102,18 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">TAKE A QUICK BREAK</p>
-              <h2 id="media-title">Listen &amp; watch</h2>
+              <h2 id="media-title">Study background</h2>
             </div>
           </div>
           <div class="media-grid">
             <article class="media-card">
-              <span class="media-label">WATCH · SHORT NATURE CLIP</span>
-              <h3>Look closely at the natural world</h3>
-              <p>Take a moment to observe the details in this short flower video.</p>
-              <video controls preload="none" poster="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&amp;fit=crop&amp;w=800&amp;q=70">
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              <span class="media-label">WATCH · 5-SECOND STUDY BACKGROUND</span>
+              <h3>Create a calm study moment</h3>
+              <p>Use this gentle background while you review notes or take a short study break.</p>
+              <video autoplay muted loop playsinline preload="auto" poster="https://assets.mixkit.co/videos/4761/4761-thumb-360-0.jpg">
+                <source src="https://assets.mixkit.co/videos/4761/4761-720.mp4" type="video/mp4">
                 Your browser does not support the video element.
               </video>
-              <a class="source-link" href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">Video sample from MDN (CC0)</a>
             </article>
             <article class="media-card audio-card">
               <span class="media-label">LISTEN · AUDIO SAMPLE</span>
@@ -124,7 +123,6 @@
                 <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
-              <a class="source-link" href="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3">Audio sample from MDN (CC0)</a>
             </article>
           </div>
         </section>
@@ -162,5 +160,15 @@
       <a class="footer-top" href="#home">Back to top &uarr;</a>
     </div>
   </footer>
+  <script>
+    const studyVideo = document.querySelector('.media-card video');
+    if (studyVideo) {
+      studyVideo.addEventListener('timeupdate', () => {
+        if (studyVideo.currentTime >= 5) {
+          studyVideo.currentTime = 0;
+        }
+      });
+    }
+  </script>
 </body>
 </html>
